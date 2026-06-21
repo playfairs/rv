@@ -36,7 +36,7 @@ export default {
 
 		const format = {
 			label: "Repo views",
-			message: String(views),
+			message: views.toLocaleString(),
 			color: "#007ec6",
 			style: "flat" as const,
 		};

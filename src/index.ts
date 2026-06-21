@@ -6,12 +6,15 @@ export default {
 		const repo = url.pathname.slice(1);
 
 		if (!repo) {
-			return new Response("""
-				You probably meant to go to an actual repository, and not this.
-				If that isn't the case, then I honestly don't know why you're here.
+			return new Response(
+				`You probably meant to go to an actual repository, and not this.
+		If that isn't the case, then I honestly don't know why you're here.
 
-				https://github.com/playfairs/rv
-				""", { status: 400 });
+		https://github.com/playfairs/rv`,
+				{
+					status: 400,
+				},
+			);
 		}
 
 		if (url.pathname === "/favicon.ico") {

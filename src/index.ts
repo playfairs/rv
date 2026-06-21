@@ -6,7 +6,7 @@ export default {
 		const repo = url.pathname.slice(1);
 
 		if (!repo) {
-			return new Response("Invalid URL. Did you forget to put /<username/repository>?", { status: 400 });
+			return new Response("Invalid URL. Did you forget to put the repository?", { status: 400 });
 		}
 
 		if (url.pathname === "/favicon.ico") {

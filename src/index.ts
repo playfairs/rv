@@ -6,7 +6,12 @@ export default {
 		const repo = url.pathname.slice(1);
 
 		if (!repo) {
-			return new Response("Invalid URL. Did you forget to put the repository?", { status: 400 });
+			return new Response("""
+				You probably meant to go to an actual repository, and not this.
+				If that isn't the case, then I honestly don't know why you're here.
+
+				https://github.com/playfairs/rv
+				""", { status: 400 });
 		}
 
 		if (url.pathname === "/favicon.ico") {

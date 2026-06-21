@@ -1,4 +1,5 @@
 import { makeBadge } from "badge-maker";
+import root from "./root";
 
 export default {
 	async fetch(request: Request, env: Env): Promise<Response> {
@@ -6,15 +7,11 @@ export default {
 		const repo = url.pathname.slice(1);
 
 		if (!repo) {
-			return new Response(
-				`You probably meant to go to an actual repository, and not this.
-		If that isn't the case, then I honestly don't know why you're here.
-
-		https://github.com/playfairs/rv`,
-				{
-					status: 400,
+			return new Response(root, {
+				headers: {
+					"Content-Type": "text/html; charset=utf-8",
 				},
-			);
+			});
 		}
 
 		if (url.pathname === "/favicon.ico") {

@@ -1,0 +1,4 @@
+CREATE TABLE repos (
+    name TEXT PRIMARY KEY,
+    views INTEGER NOT NULL DEFAULT 0
+);
